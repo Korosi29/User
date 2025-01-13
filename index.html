@@ -1,14 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>User</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src="https://kit.fontawesome.com/8482dba9f8.js" crossorigin="anonymous"></script>
+    <script src='script.js' defer></script>
 </head>
 <body>
-    
+    <main>
+        <div class="main-container">
+            <div class="inner-container1">
+                <div class="inner-con1-section-1">
+                    <h2>Welcome Back!</h2>
+                    <p>To keep Connected with us please login with your personal info</p>
+                    <button id="sign-in-btn">SIGN IN</button>
+                </div>
+                <div style="display: none;" class="inner-con1-section-2">
+                    <h2>Sign in</h2>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-google-plus-g"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <p>or use your account</p>
+                    <form>
+                        <label>
+                            <input type="email" placeholder="Email" id="sign-in-email" name="email" required>
+                        </label>
+
+                        <label><input type="password" placeholder="Password" id="sign-in-password" name="password" value="" required></label>
+
+                        <input type="submit" value="SIGN IN">
+                    </form>
+                </div>
+            </div>
+
+            <div class="inner-container2">
+                <div class="inner-con2-section-1">
+                    <h2>Create Account</h2>
+                    <p>or use your email for registration</p>
+                    <div class="icon-con">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-google-plus-g"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <form class="create-form">
+                        <label><input type="text" placeholder="Name" id="name" name="name" required></label>
+
+                        <label><input type="email" placeholder="Email" id="email" name="email" required></label>
+
+                        <label><input type="password" placeholder="Password" id="password" name="password" required></label>
+
+                        <input type="submit" value="SIGN UP">
+                    </form>
+                </div>
+
+                <div style="display: none;" class="inner-con2-section-2">
+                    <h2>Hello, Friend!</h2>
+                    <p>Enter your personal details to start a journey with us!</p>
+                    
+                    <button>SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
