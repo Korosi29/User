@@ -25,12 +25,12 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
 }
 .inner-container1{
     width: 100%;
     background: var(--primary);
-    padding: 10px;
     text-align: center;
     flex: 1;
 
@@ -38,7 +38,6 @@ body{
 .inner-container2{
     width: 100%;
     background: var(--secondary);
-    padding: 10px;
     text-align: center;
     flex: 1;
 }
@@ -68,11 +67,11 @@ body{
 .inner-con2-section-1{
     padding: 30px;
     font-size: 1em;
-    margin-top: -40px;
+    margin-top: -30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: normal;
 }
 .inner-con2-section-1 p{
     font-size: .9em;
@@ -85,8 +84,8 @@ body{
 }
 .create-form input{
     display: block;
-    margin: 15px 10px;
-    width: 300px;
+    margin: 15px auto;
+    width: 90%;
     height: 30px;
     border: none;
     border-radius: 5px;
