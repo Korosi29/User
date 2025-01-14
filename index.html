@@ -18,19 +18,22 @@
                     <p>To keep Connected with us please login with your personal info</p>
                     <button id="sign-in-btn">SIGN IN</button>
                 </div>
-                <div style="display: none;" class="inner-con1-section-2">
+                <div class="inner-con1-section-2">
                     <h2>Sign in</h2>
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-google-plus-g"></i>
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <p>or use your account</p>
+                    <div class="icon-con">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-google-plus-g"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    
+                    <p style="font-size: .9em; color: #505050;">or use your account</p>
                     <form>
                         <label>
                             <input type="email" placeholder="Email" id="sign-in-email" name="email" required>
                         </label>
 
                         <label><input type="password" placeholder="Password" id="sign-in-password" name="password" value="" required></label>
-
+                        <p style="font-size: .9em; cursor: pointer;">Forgotten password?</p>
                         <input type="submit" value="SIGN IN">
                     </form>
                 </div>
@@ -39,7 +42,9 @@
             <div class="inner-container2">
                 <div class="inner-con2-section-1">
                     <h2>Create Account</h2>
-                    <p>or use your email for registration</p>
+                    <p style="font-size: .9em;
+                    margin-top: -10px;
+                    color: #505050;">or use your email for registration</p>
                     <div class="icon-con">
                         <i class="fa-brands fa-facebook-f"></i>
                         <i class="fa-brands fa-google-plus-g"></i>
@@ -57,11 +62,11 @@
                     </form>
                 </div>
 
-                <div style="display: none;" class="inner-con2-section-2">
+                <div class="inner-con2-section-2">
                     <h2>Hello, Friend!</h2>
                     <p>Enter your personal details to start a journey with us!</p>
                     
-                    <button>SIGN UP</button>
+                    <button id="sign-up-btn">SIGN UP</button>
                 </div>
             </div>
         </div>
