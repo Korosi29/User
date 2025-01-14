@@ -10,6 +10,8 @@ const innerContainer1Sect2 = document.querySelector(".inner-con1-section-2");
 
 const innerContainer2Sect2 = document.querySelector(".inner-con2-section-2");
 
+const newUserPage = document.querySelector(".new-user-main");
+
 const signInBtn = document.getElementById("sign-in-btn");
 
 const signUpBtn = document.getElementById("sign-up-btn");
@@ -69,3 +71,37 @@ signUpBtn.onclick = function(){
     },500)
 }
 
+const createAcctForm = document.querySelector(".create-acct-form");
+
+createAcctForm.addEventListener('submit', (event) =>{
+    event.preventDefault();
+
+    const formData = {
+        userName: document.getElementById("name").value,
+        userEmail: document.getElementById("email").value,
+        userPassword: document.getElementById("password").value,
+    }
+
+    displayNewUserInfo(formData.userName, formData.userEmail, formData.userPassword);
+});
+
+function displayNewUserInfo(newUserN, newUserE, newUserP){
+    newUserPage.style.display = "flex";
+    document.getElementById("new-user-name").textContent = newUserN;
+
+    document.getElementById("new-user-email").textContent = newUserE;
+
+    document.getElementById("new-user-password").textContent = newUserP;
+
+    innerContainer1Sect1.style.display = "none";
+    innerContainer2Sect1.style.display = "none";
+
+resetForm();
+
+}
+
+function resetForm(){
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
