@@ -4,7 +4,7 @@
 
 :root{
     --background: rgb(222, 229, 240);
-    --primary: radial-gradient(#ff4300, #e02a05);
+    --primary: linear-gradient(to left,#ff7303, #e02a05);
     --secondary: rgb(255, 255, 255);
     --accent: rgb(220, 220, 225);
 }
