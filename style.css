@@ -53,14 +53,12 @@ i{
     background: var(--primary);
     text-align: center;
     flex: 1;
-    transition: transform 1.5s;
 }
 .inner-container2{
     width: 100%;
     background: var(--secondary);
     text-align: center;
     flex: 1;
-    transition: transform 1.5s;
 }
 
 h2{
@@ -74,7 +72,6 @@ h2{
     align-items: center;
     padding: 30px;
     font-size: 1em;
-    transition: transform 1.5s;
 }
 .inner-con1-section-1 button{
     font-weight: bold;
@@ -93,7 +90,6 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: normal;
-    transition: transform 1.5s;
 }
 .create-form input{
     display: block;
@@ -123,7 +119,6 @@ h2{
     align-items: normal;
     padding: 30px;
     font-size: 1em;
-    transition: transform 1.5s;
 }
 
 .inner-con1-section-2 input{
@@ -153,7 +148,6 @@ h2{
     align-items: center;
     padding: 30px;
     font-size: 1em;
-    transition: transform 1.5s;
 }
 .inner-con2-section-2 button{
     font-weight: bold;

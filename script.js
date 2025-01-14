@@ -15,12 +15,16 @@ const signInBtn = document.getElementById("sign-in-btn");
 const signUpBtn = document.getElementById("sign-up-btn");
 
 signInBtn.onclick = function(){
-    innerContainer1Sect1.style.transform = "translateY(100%)";
-    mainContainer1.style.transform = "translateY(100%)";
 
-    innerContainer2Sect1.style.transform = "translateY(-100%)";
-    mainContainer2.style.transform = "translateY(-100%)";
+    mainContainer1.style.transition = "all 2s";
+    mainContainer2.style.transition = "all 2s";
+
+    mainContainer1.style.transform = "translateY(100vh)";
+    mainContainer2.style.transform = "translateY(-100vh)";
     setTimeout(function(){
+        mainContainer1.style.transition = "none";
+        mainContainer2.style.transition = "none";
+
         innerContainer1Sect1.style.display = "none";
         innerContainer2Sect1.style.display = "none";
         innerContainer1Sect2.style.display = "flex";
@@ -34,16 +38,21 @@ signInBtn.onclick = function(){
         innerContainer1Sect1.style.transform = "translateY(0)";
 
         innerContainer2Sect1.style.transform = "translateY(0)";
-    },400)
+    },500)
 }
 
 signUpBtn.onclick = function(){
-    innerContainer1Sect1.style.transform = "translateY(100%)";
-    mainContainer1.style.transform = "translateY(100%)";
+    mainContainer1.style.transition = "all 2s";
+    mainContainer2.style.transition = "all 2s";
 
-    innerContainer2Sect1.style.transform = "translateY(-100%)";
-    mainContainer2.style.transform = "translateY(-100%)";
+    mainContainer1.style.transform = "translateY(100vh)";
+    mainContainer2.style.transform = "translateY(-100vh)";
     setTimeout(function(){
+
+        mainContainer1.style.transition = "none";
+        mainContainer2.style.transition = "none";
+
+
         innerContainer1Sect1.style.display = "flex";
         innerContainer2Sect1.style.display = "flex";
         innerContainer1Sect2.style.display = "none";
@@ -57,6 +66,6 @@ signUpBtn.onclick = function(){
         innerContainer1Sect1.style.transform = "translateY(0)";
 
         innerContainer2Sect1.style.transform = "translateY(0)";
-    },400)
+    },500)
 }
 
