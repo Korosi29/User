@@ -16,13 +16,27 @@ const signInBtn = document.getElementById("sign-in-btn");
 
 const signUpBtn = document.getElementById("sign-up-btn");
 
-signInBtn.onclick = function(){
+const mainCon = document.querySelector(".main-container");
 
+let scrnTransBox1;
+let scrnTransBox2;
+
+
+signInBtn.onclick = function(){
+    if(window.innerWidth >= 769){
+        scrnTransBox1 = "translateX(100vh)";
+
+        scrnTransBox2 = "translateX(-100vh)";
+    }else{
+        scrnTransBox1 = "translateY(100vh)";
+
+        scrnTransBox2 = "translateY(-100vh)";
+    }
     mainContainer1.style.transition = "all 2s";
     mainContainer2.style.transition = "all 2s";
 
-    mainContainer1.style.transform = "translateY(100vh)";
-    mainContainer2.style.transform = "translateY(-100vh)";
+    mainContainer1.style.transform = scrnTransBox1;
+    mainContainer2.style.transform = scrnTransBox2;
     setTimeout(function(){
         mainContainer1.style.transition = "none";
         mainContainer2.style.transition = "none";
@@ -37,18 +51,34 @@ signInBtn.onclick = function(){
         mainContainer1.style.transform = "translateY(0)";
         mainContainer2.style.transform = "translateY(0)";
 
+        mainContainer1.style.transition = "all 2s";
+        mainContainer2.style.transition = "all 2s";
+
+        mainContainer2.style.flex
+
         innerContainer1Sect1.style.transform = "translateY(0)";
 
         innerContainer2Sect1.style.transform = "translateY(0)";
-    },500)
+    },500);
 }
 
 signUpBtn.onclick = function(){
+
+    if(window.innerWidth >= 769){
+        scrnTransBox1 = "translateX(100vh)";
+
+        scrnTransBox2 = "translateX(-100vh)";
+    }else{
+        scrnTransBox1 = "translateY(100vh)";
+
+        scrnTransBox2 = "translateY(-100vh)";
+    }
+
     mainContainer1.style.transition = "all 2s";
     mainContainer2.style.transition = "all 2s";
 
-    mainContainer1.style.transform = "translateY(100vh)";
-    mainContainer2.style.transform = "translateY(-100vh)";
+    mainContainer1.style.transform = scrnTransBox1;
+    mainContainer2.style.transform = scrnTransBox2;
     setTimeout(function(){
 
         mainContainer1.style.transition = "none";
@@ -64,6 +94,9 @@ signUpBtn.onclick = function(){
 
         mainContainer1.style.transform = "translateY(0)";
         mainContainer2.style.transform = "translateY(0)";
+
+        mainContainer1.style.transition = "all 2s";
+        mainContainer2.style.transition = "all 2s";
 
         innerContainer1Sect1.style.transform = "translateY(0)";
 
@@ -86,6 +119,7 @@ createAcctForm.addEventListener('submit', (event) =>{
 });
 
 function displayNewUserInfo(newUserN, newUserE, newUserP){
+
     newUserPage.style.display = "flex";
     document.getElementById("new-user-name").textContent = newUserN;
 
@@ -96,6 +130,9 @@ function displayNewUserInfo(newUserN, newUserE, newUserP){
     innerContainer1Sect1.style.display = "none";
     innerContainer2Sect1.style.display = "none";
 
+    mainCon.style.flexDirection = "column";
+    mainCon.style.height = "fit-content";
+
 resetForm();
 
 }
@@ -105,3 +142,11 @@ function resetForm(){
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
 }
+
+const signInForm = document.querySelector(".sign-in-form");
+
+signInForm.addEventListener("submit", (event)=>{
+        event.preventDefault();
+        alert("Thank you for trying out my webpage");
+        window.location.href = "index.html";
+});

@@ -29,9 +29,9 @@
                     </div>
                     
                     <p style="font-size: .9em; color: #505050;">or use your account</p>
-                    <form>
+                    <form class="sign-in-form">
                         <label>
-                            <input type="email" placeholder="Email" id="sign-in-email" name="email" required>
+                            <input type="email" placeholder="Email" id="sign-in-email" name="email" required autocomplete="off">
                         </label>
 
                         <label><input type="password" placeholder="Password" id="sign-in-password" name="password" value="" required></label>
@@ -51,6 +51,7 @@
                         </p>
                         <p>Your password is <b>[ <span id="new-user-password"></span> ]</b>. Please keep it safe.</p>
                         <p>Your Email: <b><span id="new-user-email"></span></b></p>
+                        <button class="ok-btn" onclick="window.location.href = 'index.html'; alert('Thank you for trying out my webpage')">OK</button>
                     </div>
                 </div>
 
@@ -69,9 +70,9 @@
                     </div>
 
                     <form class="create-acct-form">
-                        <label><input type="text" placeholder="Name" id="name" name="name" required value=""></label>
+                        <label><input type="text" placeholder="Name" id="name" name="name" required value="" autocomplete="off"></label>
 
-                        <label><input type="email" placeholder="Email" id="email" name="email" required value=""></label>
+                        <label><input type="email" placeholder="Email" id="email" name="email" required value="" autocomplete="off"></label>
 
                         <label><input type="password" placeholder="Password" id="password" name="password" required value=""></label>
 
