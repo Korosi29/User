@@ -1,25 +1,53 @@
+/* ===== DOM Element References ===== */
+/* Left panel container (orange) */
 const mainContainer1 = document.querySelector(".inner-container1");
 
+/* Right panel container (white) */
 const mainContainer2 = document.querySelector(".inner-container2");
 
+/* Welcome Back section on left panel */
 const innerContainer1Sect1 = document.querySelector(".inner-con1-section-1");
 
+/* Sign Up form section on right panel */
 const innerContainer2Sect1 = document.querySelector(".inner-con2-section-1");
 
+/* Sign In form section on left panel */
 const innerContainer1Sect2 = document.querySelector(".inner-con1-section-2");
 
+/* Sign Up CTA section on right panel */
 const innerContainer2Sect2 = document.querySelector(".inner-con2-section-2");
 
+/* Congratulation page shown after sign-up */
 const newUserPage = document.querySelector(".new-user-main");
 
+/* Sign In button - triggers panel transition */
 const signInBtn = document.getElementById("sign-in-btn");
 
+/* Sign Up button - triggers form display */
 const signUpBtn = document.getElementById("sign-up-btn");
 
+/* Main container holding both panels */
 const mainCon = document.querySelector(".main-container");
 
+/* Variables for storing transform values (responsive) */
 let scrnTransBox1;
 let scrnTransBox2;
+
+// Dark mode toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+// Check for saved dark mode preference or default to false
+const isDarkMode = localStorage.getItem("darkMode") === "true";
+if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    darkModeToggle.checked = true;
+}
+
+darkModeToggle.addEventListener("change", function() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDark);
+});
 
 
 signInBtn.onclick = function(){
