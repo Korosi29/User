@@ -54,8 +54,6 @@ signInBtn.onclick = function(){
         mainContainer1.style.transition = "all 2s";
         mainContainer2.style.transition = "all 2s";
 
-        mainContainer2.style.flex
-
         innerContainer1Sect1.style.transform = "translateY(0)";
 
         innerContainer2Sect1.style.transform = "translateY(0)";
