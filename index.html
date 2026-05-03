@@ -1,25 +1,42 @@
 <!DOCTYPE html>
+<!-- User Authentication Page - Sign In & Sign Up
+     Features: Responsive dual-panel layout, dark mode toggle, smooth animations -->
 <html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>User</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Link to external CSS stylesheet -->
     <link rel='stylesheet'type='text/css' media='screen' href='style.css'>
+    <!-- Font Awesome icon library for social media icons -->
     <script src="https://kit.fontawesome.com/8482dba9f8.js" crossorigin="anonymous"></script>
+    <!-- Link to JavaScript file with defer attribute for optimal loading -->
     <script src='script.js' defer></script>
 </head>
 <body>
+    <!-- Dark Mode Toggle Switch - Fixed position in top-right corner -->
+    <div class="toggle-container">
+        <input type="checkbox" id="dark-mode-toggle" class="toggle-checkbox">
+        <label for="dark-mode-toggle" class="toggle-label"></label>
+    </div>
+    <!-- Main Container -->
     <main>
+        <!-- Main container with flex layout for dual-panel design -->
         <div class="main-container">
+            <!-- LEFT PANEL: Sign In Section (Orange Background) -->
             <div class="inner-container1">
+                <!-- Sign In CTA Section - Initial View -->
                 <div class="inner-con1-section-1">
                     <h2>Welcome Back!</h2>
                     <p>To keep Connected with us please login with your personal info</p>
+                    <!-- Button to trigger sign-in panel transition -->
                     <button id="sign-in-btn">SIGN IN</button>
                 </div>
+                <!-- Sign In Form Section - Triggered by sign-in-btn -->
                 <div class="inner-con1-section-2">
                     <h2>Sign in</h2>
+                    <!-- Social Media Icon Links -->
                     <div class="icon-con">
                         <i class="fa-brands fa-facebook-f"></i>
                         <i class="fa-brands fa-google-plus-g"></i>
@@ -27,6 +44,7 @@
                     </div>
                     
                     <p style="font-size: .9em; color: #505050;">or use your account</p>
+                    <!-- Sign In Form with Email and Password Fields -->
                     <form class="sign-in-form">
                         <label>
                             <input type="email" placeholder="Email" id="sign-in-email" name="email" required autocomplete="off">
@@ -39,15 +57,17 @@
                 </div>
 
 
+                <!-- Confirmation Page - Displayed after successful sign-up -->
                 <div class="new-user-main">
-
                     <div>
                         <h2>Congratulation!</h2>
                     </div>
                     <div>
                         <p>Hello <b><span id="new-user-name"></span></b>! Welcome to userExperience<br>
                         </p>
+                        <!-- Password is dynamically inserted from form data -->
                         <p>Your password is <b>[ <span id="new-user-password"></span> ]</b>. Please keep it safe.</p>
+                        <!-- Email is dynamically inserted from form data -->
                         <p>Your Email: <b><span id="new-user-email"></span></b></p>
                         <button class="ok-btn" onclick="window.location.href = 'index.html'; alert('Thank you for trying out my webpage')">OK</button>
                     </div>
@@ -55,12 +75,15 @@
 
             </div>
 
+            <!-- RIGHT PANEL: Sign Up Section (White Background) -->
             <div class="inner-container2">
+                <!-- Sign Up Form Section - Displayed by default -->
                 <div class="inner-con2-section-1">
                     <h2>Create Account</h2>
                     <p style="font-size: .9em;
                     margin-top: -10px;
                     color: #505050;">or use your email for registration</p>
+                    <!-- Social Media Icon Links -->
                     <div class="icon-con">
                         <i class="fa-brands fa-facebook-f"></i>
                         <i class="fa-brands fa-google-plus-g"></i>
@@ -78,10 +101,12 @@
                     </form>
                 </div>
 
+                <!-- Sign Up CTA Section - Initial View (Triggered after sign-in toggle) -->
                 <div class="inner-con2-section-2">
                     <h2>Hello, Friend!</h2>
                     <p>Enter your personal details to start a journey with us!</p>
                     
+                    <!-- Button to trigger sign-up form display -->
                     <button id="sign-up-btn">SIGN UP</button>
                 </div>
             </div>

@@ -1,67 +1,180 @@
 
 
+/* ===== STYLE.CSS - User Authentication Page Styles ===== */
+/* Import Ubuntu font from Google Fonts - multiple weights for typography hierarchy */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+/* ===== CSS VARIABLES (Light Mode) ===== */
 :root{
+    /* Light background color for page */
     --background: rgb(222, 229, 240);
+    /* Orange gradient for primary containers (Welcome Back panel) */
     --primary: linear-gradient(to left,#ff7303, #e02a05);
+    /* White for secondary containers */
     --secondary: rgb(255, 255, 255);
+    /* Light gray for accent elements (input fields) */
     --accent: rgb(220, 220, 225);
+    /* Black text in light mode */
+    --text-color: rgb(0, 0, 0);
+}
+
+/* ===== CSS VARIABLES (Dark Mode) ===== */
+body.dark-mode {
+    /* Dark gray background */
+    --background: rgb(30, 30, 35);
+    /* Dark blue gradient for primary containers */
+    --primary: linear-gradient(135deg, #1a1a2e, #16213e);
+    /* Dark gray for secondary containers */
+    --secondary: rgb(45, 45, 50);
+    /* Darker gray for accent elements */
+    --accent: rgb(60, 60, 65);
+    /* Light gray text for contrast */
+    --text-color: rgb(230, 230, 230);
 }
 
 
 
+/* ===== GLOBAL STYLES ===== */
 body{
     margin: 0;
     padding: 10px;
+    /* Use CSS variable for theme-aware background */
     background-color: var(--background);
     font-family: Ubuntu, sans-serif;
+    /* Use CSS variable for theme-aware text color */
+    color: var(--text-color);
+    /* Smooth color transition when switching between light/dark modes (0.3s) */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ===== DARK MODE TOGGLE SWITCH ===== */
+.toggle-container {
+    /* Fixed positioning: always visible in top-right corner */
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    z-index: 1000;
+    display: inline-block;
+}
+
+/* Hide the actual checkbox input */
+.toggle-checkbox {
+    display: none;
+}
+
+/* ===== TOGGLE SWITCH STYLING ===== */
+/* Custom-styled toggle switch label */
+.toggle-label {
+    display: block;
+    width: 48px;
+    height: 24px;
+    /* Default gray color */
+    background-color: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    position: relative;
+    /* Smooth background color transition on toggle */
+    transition: background-color 0.3s ease;
+    /* Subtle shadow for depth */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== TOGGLE SWITCH SLIDER ===== */
+/* Animated slider circle that moves left/right */
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* White slider circle */
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    /* Smooth sliding animation */
+    transition: left 0.3s ease;
+    /* Shadow effect on slider */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== TOGGLE CHECKED STATE ===== */
+/* When toggle is checked (dark mode enabled) */
+.toggle-checkbox:checked + .toggle-label {
+    /* Dark blue background when active */
+    background-color: #1a1a2e;
+}
+
+/* Slide the toggle circle to the right when checked */
+.toggle-checkbox:checked + .toggle-label::after {
+    left: 26px;
+}
+
+
+/* ===== MAIN LAYOUT ===== */
 main{
     width: 100%;
     height: 100vh;
+    /* Center content both horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/* ===== GLOBAL FORM ELEMENTS ===== */
 input[type="submit"], button{
     cursor: pointer;
     padding: .4em 1.5em;
 }
+
+/* Focus state for input fields */
 input:focus{
     outline: 1px solid #505050;
 }
+
+/* Placeholder text styling */
 input::placeholder{
     padding: 8px;
 }
+
+/* Icon styling - used for social media links */
 i{
     font-size: .9em;
     margin: -.3em .5em;
     cursor: pointer;
 }
+
+/* ===== MAIN CONTAINER (Dual-Panel) ===== */
 .main-container{
     width: 100%;
     height: fit-content;
     border-radius: 10px;
+    /* Hide overflow to maintain rounded corners */
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    /* Subtle shadow for depth */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
+/* ===== LEFT PANEL (Sign In - Orange Background) ===== */
 .inner-container1{
     width: 100%;
+    /* Primary color variable (orange gradient in light mode) */
     background: var(--primary);
     text-align: center;
     flex: 1;
 }
+
+/* ===== RIGHT PANEL (Sign Up - White Background) ===== */
 .inner-container2{
     width: 100%;
+    /* Secondary color variable (white in light mode) */
     background: var(--secondary);
     text-align: center;
     flex: 1;
 }
 
+/* ===== HEADING STYLES ===== */
 h2{
     font-size: 1.8em;
 }
@@ -117,6 +230,15 @@ h2{
     align-items: normal;
     padding: 30px;
     font-size: 1em;
+    color: white;
+}
+
+.inner-con1-section-2 h2{
+    color: #ff7303;
+}
+
+.inner-con1-section-2 .icon-con i{
+    color: #ff7303;
 }
 
 .inner-con1-section-2 input{
@@ -162,6 +284,15 @@ h2{
     align-items: center;
     padding: 30px;
     font-size: 1em;
+}
+
+/* Dark mode styling for sign-in section */
+body.dark-mode .inner-con1-section-2 h2{
+    color: whitesmoke;
+}
+
+body.dark-mode .inner-con1-section-2 .icon-con i{
+    color: whitesmoke;
 }
 
 @media (min-width: 600px) and (max-width: 768px){
